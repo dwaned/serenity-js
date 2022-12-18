@@ -2,7 +2,8 @@ import { spawner, SpawnResult } from '@integration/testing-tools';
 import * as path from 'path';
 
 const jasmineExecutable = path.resolve(
-    require.resolve('jasmine/package.json'),
+    require.resolve('jasmine'),
+    '..',
     '..',
     'bin',
     'jasmine.js',
@@ -21,7 +22,7 @@ export function jasmine(...params: string[]): Promise<SpawnResult> {
     return jasmineSpawner(
         ...params,
         '--random=false',
-        '--reporter=@serenity-js/jasmine',
+        '--reporter=./node_modules/@serenity-js/jasmine/lib/index.js',      // todo: fix exports so that I don't need to add /lib/index.js
         `--require=${ path.resolve(__dirname, '../examples/setup.js') }`,
     );
 }
