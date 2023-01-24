@@ -31,11 +31,11 @@
     "compile": "rimraf lib && tsc --project tsconfig.build.json"
   },
   "dependencies": {
-    "cuid": "^2.1.8",
+    "cuid": "^3.0.0",
     "diff": "^5.1.0",
     "error-stack-parser": "2.1.4",
     "fast-glob": "^3.2.12",
-    "filenamify": "^4.3.0",
+    "filenamify": "^5.1.1",
     "graceful-fs": "^4.2.10",
     "moment": "^2.29.4",
     "semver": "^7.3.8",
